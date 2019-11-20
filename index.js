@@ -60,7 +60,8 @@ app.post('/consult', (request, response) => {
                 console.log(payload);
                 response.status(200).json({
                     code: 200,
-                    message: 'Success record.'
+                    message: 'Success record.',
+                    data: payload.data
                 });
             })
             .catch(error => {
