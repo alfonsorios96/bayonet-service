@@ -91,7 +91,7 @@ app.post('/update', (request, response) => {
                 "auth": {
                     "api_key": "8f72c3de-c0b0-4dc0-ba20-45d0ce3e169e"
                 },
-                "transaction_id": request.body.bayonet_tracking_id, // puedes usar el order_id o bayonet_tracking_id también
+                "transaction_id": request.body.orderId, // puedes usar el order_id o bayonet_tracking_id también
                 "transaction_status": request.body.status
             }
         })
