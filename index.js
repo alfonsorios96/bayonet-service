@@ -78,6 +78,45 @@ app.post('/consult', (request, response) => {
         });
     }
 });
+
+app.post('/update', (request, response) => {
+    const fingerprint = request.headers['x-token'];
+
+    if (fingerprint) {
+        axios({
+            method: 'post',
+            url: 'https://api.bayonet.io/v2/sigma/consult',
+            headers: {'Content-Type': 'application/json'},
+            data: {
+                "auth": {
+                    "api_key": "8f72c3de-c0b0-4dc0-ba20-45d0ce3e169e"
+                },
+                "transaction_id": request.body.bayonet_tracking_id, // puedes usar el order_id o bayonet_tracking_id también
+                "transaction_status": request.body.status
+            }
+        })
+            .then(payload => {
+                console.log(payload);
+                response.status(200).json({
+                    code: 200,
+                    message: 'Success update.'
+                });
+            })
+            .catch(error => {
+                console.log(error);
+                response.status(500).json({
+                    code: 500,
+                    message: 'Bayonet fail'
+                });
+            })
+
+    } else {
+        response.status(500).json({
+            code: 500,
+            message: 'Fingerprint missing'
+        });
+    }
+});
 app.listen(PORT);
 
 console.log('Magic happens at http://localhost:' + PORT);
