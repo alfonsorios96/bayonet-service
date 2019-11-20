@@ -16,7 +16,7 @@ app.get('/', (request, response) => {
 });
 
 app.post('/consult', (request, response) => {
-        const fingerprint = request.headers['x-token'];
+    const fingerprint = request.headers['x-token'];
     if (fingerprint) {
         axios({
             method: 'post',
@@ -56,8 +56,8 @@ app.post('/consult', (request, response) => {
                 "transaction_id": (new Date()).getTime().toString()
             }
         })
-            .then(response => {
-                console.log(response);
+            .then(payload => {
+                console.log(payload);
                 response.status(200).json({
                     code: 200,
                     message: 'Success record.'
