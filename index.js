@@ -53,7 +53,7 @@ app.post('/consult', (request, response) => {
                     }
                 ],
                 "order_id": "14152",
-                "transaction_id": "12411"
+                "transaction_id": (new Date()).getTime().toString()
             }
         })
             .then(response => {
