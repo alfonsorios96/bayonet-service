@@ -27,7 +27,7 @@ app.post('/consult', (request, response) => {
                     "api_key": "8f72c3de-c0b0-4dc0-ba20-45d0ce3e169e"
                 },
                 "email": "malforime@gmail.com",
-                "payment_method": "wallet",
+                "payment_method": "offline",
                 "consumer_name": "Manuel Alfonso Rios Medellin",
                 "consumer_internal_id": "12312",
                 "telephone": "5538259461",
