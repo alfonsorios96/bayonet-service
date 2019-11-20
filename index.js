@@ -85,7 +85,7 @@ app.post('/update', (request, response) => {
     if (fingerprint) {
         axios({
             method: 'post',
-            url: 'https://api.bayonet.io/v2/sigma/consult',
+            url: 'https://api.bayonet.io/v2/sigma/update-transaction',
             headers: {'Content-Type': 'application/json'},
             data: {
                 "auth": {
