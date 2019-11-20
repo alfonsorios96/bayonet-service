@@ -16,7 +16,7 @@ app.get('/', (request, response) => {
 });
 
 app.post('/consult', (request, response) => {
-    const fingerprint = request.headers['Authorization'];
+        const fingerprint = request.headers['x-token'];
     if (fingerprint) {
         axios({
             method: 'post',
